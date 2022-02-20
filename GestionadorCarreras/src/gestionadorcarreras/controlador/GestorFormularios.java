@@ -14,7 +14,7 @@ import java.util.Collection;
  */
 public class GestorFormularios {
     
-    
+    private DAO dao;
     
     /**
      * Metodo de agregar formulario
@@ -22,7 +22,8 @@ public class GestorFormularios {
      * @return 
      */
     public boolean agregarFormulario(Formulario unFormulario){
-        return false;
+        dao.formularios.add(unFormulario);
+        return true;
     };
     /**
      * Metodo de realizar simulacion
