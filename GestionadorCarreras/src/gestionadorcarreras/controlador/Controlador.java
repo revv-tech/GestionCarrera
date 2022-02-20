@@ -17,7 +17,7 @@ public class Controlador {
     
     private GestorCarreras gCarreras;
     private GestorFormularios gFormularios;
-    private static int countForm =0;
+    private static int countForm = 0;
     
     /**
      * Metodo para crear carrera
@@ -57,7 +57,12 @@ public class Controlador {
      * @return 
      */
     public boolean crearFormulario(Formulario unFormulario){
-        return false;
+        // Pone id a cada form
+        unFormulario.setNum(countForm++);
+        // Agrega form a gCarreras
+        gFormularios.agregarFormulario(unFormulario);
+        // retorna true si es exitoso
+        return true;
     }
     /**
      * Metodo para simular aplicacion de examen

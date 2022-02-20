@@ -4,10 +4,17 @@
  */
 package gestionadorcarreras.controlador;
 
+import gestionadorcarreras.modelo.Carrera;
+import gestionadorcarreras.modelo.Formulario;
+import java.util.Collection;
+
 /**
  *
  * @author Marco
  */
 public class DAO {
+    
+    Collection<Carrera> carreras;
+    Collection<Formulario> formularios;
     
 }
