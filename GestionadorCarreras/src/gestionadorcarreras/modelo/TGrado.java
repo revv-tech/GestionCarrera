@@ -8,6 +8,10 @@ package gestionadorcarreras.modelo;
  *
  * @author Marco
  */
-public class TGrado {
-    
+public enum TGrado {
+    TECNICO,
+    BACHILLERATO,
+    LICENCIATURA,
+    MAESTRIA,
+    DOCTORADO
 }
