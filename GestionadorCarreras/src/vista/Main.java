@@ -4,6 +4,9 @@
  */
 package vista;
 import gestionadorcarreras.controlador.Controlador;
+import gestionadorcarreras.modelo.Carrera;
+import gestionadorcarreras.modelo.TEstado;
+import gestionadorcarreras.modelo.Formulario;
 
 /**
  *
@@ -11,10 +14,9 @@ import gestionadorcarreras.controlador.Controlador;
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
-        System.out.println("Hola mundo");
+       
+        
     }
 }

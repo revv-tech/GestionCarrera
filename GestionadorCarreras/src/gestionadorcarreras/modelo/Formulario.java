@@ -9,13 +9,14 @@ package gestionadorcarreras.modelo;
  * @author Marco
  */
 public class Formulario {
+    
     private int num;
     private TEstado estado;
     private Carrera carreraSolicitada;
     private int puntajeObtenido;
+    
 
-    public Formulario(int num, TEstado estado, Carrera carreraSolicitada, int puntajeObtenido) {
-        this.num = num;
+    public Formulario(TEstado estado, Carrera carreraSolicitada, int puntajeObtenido) {
         this.estado = estado;
         this.carreraSolicitada = carreraSolicitada;
         this.puntajeObtenido = puntajeObtenido;

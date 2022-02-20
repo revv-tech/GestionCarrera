@@ -17,6 +17,8 @@ public class Controlador {
     
     private GestorCarreras gCarreras;
     private GestorFormularios gFormularios;
+    private static int countForm =0;
+    
     /**
      * Metodo para crear carrera
      * @param dto
@@ -87,8 +89,6 @@ public class Controlador {
     public Collection verFormularios(TEstado estado, boolean porNombre){
         return null;
     }
-    
-    
     
     
 }
