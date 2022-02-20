@@ -14,6 +14,8 @@ import java.util.Collection;
  */
 public class GestorCarreras {
     
+    private DAO dao;
+    
     /**
      * Metodo para agregar una carrera
      * @param unaCarrea

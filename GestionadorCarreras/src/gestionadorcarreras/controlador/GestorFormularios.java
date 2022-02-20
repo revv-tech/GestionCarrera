@@ -13,14 +13,17 @@ import java.util.Collection;
  * @author Marco
  */
 public class GestorFormularios {
-
+    
+    private DAO dao;
+    
     /**
-     * Metodo de enviar formulario
+     * Metodo de agregar formulario
      * @param unFormulario
      * @return 
      */
     public boolean agregarFormulario(Formulario unFormulario){
-        return false;
+        dao.formularios.add(unFormulario);
+        return true;
     };
     /**
      * Metodo de realizar simulacion
