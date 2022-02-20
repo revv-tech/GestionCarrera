@@ -13,9 +13,11 @@ import java.util.Collection;
  * @author Marco
  */
 public class GestorFormularios {
-
+    
+    
+    
     /**
-     * Metodo de enviar formulario
+     * Metodo de agregar formulario
      * @param unFormulario
      * @return 
      */
