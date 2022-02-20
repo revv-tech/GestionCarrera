@@ -8,6 +8,9 @@ package gestionadorcarreras.modelo;
  *
  * @author Marco
  */
-public class TEstado {
-    
+public enum TEstado {
+    SOLICITANTE,
+    ACEPTADO,
+    RECHAZADO,
+    EN_ESPERA
 }
