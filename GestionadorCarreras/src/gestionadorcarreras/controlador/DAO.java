@@ -19,9 +19,8 @@ public class DAO {
     ArrayList<Formulario> formularios;
 
     public DAO() {
-        
-        carreras = new ArrayList<>();
-        formularios = new ArrayList<>();
+        this.carreras = new ArrayList<Carrera>();
+        this.formularios = new ArrayList<Formulario>();
     }
     
     public ArrayList<Carrera> getCarreras() {
