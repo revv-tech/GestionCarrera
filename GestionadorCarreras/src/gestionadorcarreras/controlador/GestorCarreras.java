@@ -56,4 +56,11 @@ public class GestorCarreras {
     public boolean modificarCarrera(Carrera unaCarrera){
         return false;
     }
+    /**
+     * Metodo que devuelve las carreras del DAO
+     * @return 
+     */
+    public Collection<Carrera> getCarrerasDAO(){
+        return dao.getCarreras();
+    }
 }

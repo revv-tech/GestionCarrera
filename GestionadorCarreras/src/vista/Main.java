@@ -23,7 +23,7 @@ public class Main {
         // crear grado
         Sede sedeC = new Sede(1, "Cartago");
         Sede sedeSJ = new Sede(1, "San Jose");
-        Carrera compu = new Carrera(1, "Computacion", 650, 40, TGrado.BACHILLERATO, sedeSJ);
-        Carrera biotec = new Carrera(2, "Biotecnologia", 750, 40, TGrado.BACHILLERATO, sedeC);
+        Carrera compu = new Carrera("CI", "Computacion", 650, 40, TGrado.BACHILLERATO, sedeSJ);
+        Carrera biotec = new Carrera("BIO", "Biotecnologia", 750, 40, TGrado.BACHILLERATO, sedeC);
     }
 }
