@@ -93,8 +93,11 @@ public class Controlador {
         int min = 0;
         int max = 800;
         
+        
+        
         for (int i = 0 ; i <= maxForms ; i++){
-            
+            //Crea codigo de formulario
+            countForm = countForm+1;
             // Obtiene carrera random
             Random rnd = new Random();
             int iCarrera = rnd.nextInt(gCarreras.getCarrerasDAO().size());
@@ -103,8 +106,10 @@ public class Controlador {
             int b = (int)(Math.random()*(max-min+1)+min);
             // Crea form
             Formulario newForm = new Formulario(carrera,b);
+            newForm.setNum(countForm);
             gFormularios.agregarFormulario(newForm);
-              
+            System.out.println(newForm.toString());
+               
         }
         return true;
     }
