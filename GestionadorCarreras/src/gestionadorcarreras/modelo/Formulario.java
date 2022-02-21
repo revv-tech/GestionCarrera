@@ -78,7 +78,7 @@ public class Formulario {
 
     @Override
     public String toString() {
-        return "Formulario{" + "num=" + num + ", estado=" + estado + ", carreraSolicitada=" + carreraSolicitada + ", puntajeObtenido=" + puntajeObtenido + '}';
+        return "Formulario{" + "num=" + num + ", estado=" + estado + ", carreraSolicitada=" + carreraSolicitada.toString() + ", puntajeObtenido=" + puntajeObtenido + '}';
     }
     
 }

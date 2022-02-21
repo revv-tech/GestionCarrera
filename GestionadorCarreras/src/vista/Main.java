@@ -40,7 +40,7 @@ public class Main {
         controlador.simularAplicacionExamen(12);
         controlador.procesarResultados();
 
-        
+        controlador.visualizarSolicitudes();
         
     }
 }

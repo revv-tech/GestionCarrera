@@ -108,7 +108,6 @@ public class Controlador {
             Formulario newForm = new Formulario(carrera,b);
             newForm.setNum(countForm);
             gFormularios.agregarFormulario(newForm);
-            System.out.println(newForm.toString());
                
         }
         return true;
@@ -133,7 +132,7 @@ public class Controlador {
 
                     f.setEstado(TEstado.ACEPTADO);
                 }
-                System.out.println(f.toString());
+                //System.out.println(f.toString());
               
         }
             
@@ -143,8 +142,15 @@ public class Controlador {
      * Metodo para visualizar las solicitudes
      * @return 
      */
-    public ArrayList<Carrera> visualizarSolicitudes(){
-        return null;
+    public ArrayList<Formulario> visualizarSolicitudes(){
+        ArrayList<Formulario> forms = this.gFormularios.getSolicitudes();
+        
+        for (Formulario f : forms){
+        
+            System.out.println(f.toString());
+        }
+        
+        return forms;
     }
     /**
      * Metodo para ver formularios
