@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package gestionadorcarreras.modelo;
+import java.util.Comparator;
 
 /**
  *
@@ -14,12 +15,34 @@ public class Formulario {
     private TEstado estado;
     private Carrera carreraSolicitada;
     private int puntajeObtenido;
+    private String nombreSolicitante;
     
 
-    public Formulario(Carrera carreraSolicitada, int puntajeObtenido) {
+    public Formulario(Carrera carreraSolicitada, int puntajeObtenido, String nombre) {
         this.carreraSolicitada = carreraSolicitada;
         this.puntajeObtenido = puntajeObtenido;
+        this.nombreSolicitante = nombre;
     }
+    
+    public Formulario(Carrera carreraSolicitada, int puntajeObtenido){
+        this.carreraSolicitada = carreraSolicitada;
+        this.puntajeObtenido = puntajeObtenido;
+        this.nombreSolicitante = "";
+    }
+    
+    public static Comparator<Formulario> compGrade = new Comparator<Formulario>() {
+      public int compare(Formulario f1, Formulario f2) {
+          return f2.puntajeObtenido - f1.puntajeObtenido;
+      }  
+    };
+    
+    public static Comparator<Formulario> compName = new Comparator<Formulario>() {
+      public int compare(Formulario f1, Formulario f2) {
+          String StudentName1 = f1.nombreSolicitante.toUpperCase();
+	  String StudentName2 = f2.nombreSolicitante.toUpperCase();
+	  return StudentName1.compareTo(StudentName2);
+      }  
+    };
 
     public int getNum() {
         return num;
