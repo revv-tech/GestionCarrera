@@ -21,6 +21,13 @@ public class Controlador {
     private GestorFormularios gFormularios;
     private DTOCarreras dtoCarerras;
     private static int countForm = 0;
+
+    public Controlador() {
+        this.gCarreras = new GestorCarreras();
+        this.gFormularios = new GestorFormularios();
+    }
+    
+    
     
     /**
      * Metodo para crear carrera
@@ -30,6 +37,7 @@ public class Controlador {
     public boolean crearCarrera(DTOCarreras dto){
         Sede sede = new Sede(dto.codigoSede,dto.nombreSede);
         Carrera carrera = new Carrera(dto.codigo,dto.nombre,dto.capacidadMax,dto.puntajeAdmision,dto.grado,sede);
+        gCarreras.agregarCarrera(carrera);
         return true;
     }
     /**
@@ -102,7 +110,24 @@ public class Controlador {
      * @return 
      */
     public boolean procesarResultados(){
-        return false;
+        
+        
+        Collection<Formulario> forms = gFormularios.getSolicitudes();
+        
+            for (Formulario f : forms){
+            if (f.getPuntajeObtenido() < f.getCarreraSolicitada().getPuntajeAdimision()){
+            
+                f.setEstado(TEstado.RECHAZADO);
+            }
+            
+            else if (f.getPuntajeObtenido() >= f.getCarreraSolicitada().getPuntajeAdimision()){
+            
+                f.setEstado(TEstado.ACEPTADO);
+            }
+              
+        }
+            
+            return true;
     }
     /**
      * Metodo para visualizar las solicitudes

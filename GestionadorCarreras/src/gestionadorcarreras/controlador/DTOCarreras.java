@@ -16,10 +16,10 @@ public class DTOCarreras {
     int puntajeAdmision;
     int capacidadMax;
     TGrado grado;
-    String codigoSede;
+    int codigoSede;
     String nombreSede;
 
-    public DTOCarreras(String codigo, String nombre, int puntajeAdmision, int capacidadMax, TGrado grado, String codigoSede, String nombreSede) {
+    public DTOCarreras(String codigo, String nombre, int puntajeAdmision, int capacidadMax, TGrado grado, int codigoSede, String nombreSede) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.puntajeAdmision = puntajeAdmision;
@@ -69,11 +69,11 @@ public class DTOCarreras {
         this.grado = grado;
     }
 
-    public String getCodigoSede() {
+    public int getCodigoSede() {
         return codigoSede;
     }
 
-    public void setCodigoSede(String codigoSede) {
+    public void setCodigoSede(int codigoSede) {
         this.codigoSede = codigoSede;
     }
 

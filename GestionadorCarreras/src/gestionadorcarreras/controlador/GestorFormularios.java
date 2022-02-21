@@ -44,7 +44,7 @@ public class GestorFormularios {
      * @return 
      */
     public Collection getSolicitudes(){
-        return null;
+        return dao.formularios;
     }
     /**
      * Metodo para obtener solictudes por nombre
