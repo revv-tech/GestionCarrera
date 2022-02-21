@@ -20,7 +20,8 @@ public class DAO {
 
     public DAO() {
         
-
+        carreras = new ArrayList<>();
+        formularios = new ArrayList<>();
     }
     
     public ArrayList<Carrera> getCarreras() {
