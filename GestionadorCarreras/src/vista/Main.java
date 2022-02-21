@@ -38,6 +38,7 @@ public class Main {
         controlador.crearCarrera(dtobiotec);
         
         controlador.simularAplicacionExamen(12);
+        controlador.procesarResultados();
 
         
         
