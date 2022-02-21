@@ -6,7 +6,9 @@ package vista;
 import gestionadorcarreras.controlador.Controlador;
 import gestionadorcarreras.modelo.Carrera;
 import gestionadorcarreras.modelo.TEstado;
+import gestionadorcarreras.modelo.TGrado;
 import gestionadorcarreras.modelo.Formulario;
+import gestionadorcarreras.modelo.Sede;
 
 /**
  *
@@ -17,6 +19,11 @@ public class Main {
     
     public static void main(String args[]) {
        
-        
+        // crear sede
+        // crear grado
+        Sede sedeC = new Sede(1, "Cartago");
+        Sede sedeSJ = new Sede(1, "San Jose");
+        Carrera compu = new Carrera(1, "Computacion", 650, 40, TGrado.BACHILLERATO, sedeSJ);
+        Carrera biotec = new Carrera(2, "Biotecnologia", 750, 40, TGrado.BACHILLERATO, sedeC);
     }
 }
