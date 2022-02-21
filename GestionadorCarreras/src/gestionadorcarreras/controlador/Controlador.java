@@ -9,7 +9,7 @@ import gestionadorcarreras.modelo.Formulario;
 import gestionadorcarreras.modelo.Sede;
 import gestionadorcarreras.modelo.TEstado;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -162,5 +162,11 @@ public class Controlador {
         return null;
     }
     
+    public void ordenarXNombre(){
+        Collections.sort(DAO.formularios, Formulario.compName);
+    }
     
+    public void ordenarXNota() {
+        Collections.sort(DAO.formularios, Formulario.compGrade);
+    }
 }

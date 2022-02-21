@@ -15,8 +15,8 @@ import java.util.Collection;
  */
 public class DAO {
     
-    ArrayList<Carrera> carreras;
-    ArrayList<Formulario> formularios;
+    public static ArrayList<Carrera> carreras;
+    public static ArrayList<Formulario> formularios;
 
     public DAO() {
         this.carreras = new ArrayList<Carrera>();
