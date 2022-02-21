@@ -6,6 +6,7 @@ package gestionadorcarreras.controlador;
 
 import gestionadorcarreras.modelo.Formulario;
 import gestionadorcarreras.modelo.TEstado;
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -43,21 +44,21 @@ public class GestorFormularios {
      * Metodo de retornar las solicitudes registradas
      * @return 
      */
-    public Collection getSolicitudes(){
+    public ArrayList<Formulario> getSolicitudes(){
         return dao.formularios;
     }
     /**
      * Metodo para obtener solictudes por nombre
      * @return 
      */
-    public Collection getSolicitudesPorNombre(TEstado estado){
+    public ArrayList<Formulario> getSolicitudesPorNombre(TEstado estado){
         return null;
     }
     /**
      * Metodo para obtener solictudes por puntaje
      * @return 
      */
-    public Collection getSolicitudesPorPuntaje(TEstado estado){
+    public ArrayList<Formulario> getSolicitudesPorPuntaje(TEstado estado){
         return null;
     }
 
