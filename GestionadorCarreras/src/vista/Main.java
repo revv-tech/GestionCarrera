@@ -20,11 +20,14 @@ public class Main {
     public static void main(String args[]) {
        
         // crear sede
+        Controlador controlador = new Controlador();
         // crear grado
         Sede sedeC = new Sede(1, "Cartago");
         Sede sedeSJ = new Sede(1, "San Jose");
         Carrera compu = new Carrera("CI", "Computacion", 650, 40, TGrado.BACHILLERATO, sedeSJ);
         Carrera biotec = new Carrera("BIO", "Biotecnologia", 750, 40, TGrado.BACHILLERATO, sedeC);
+        
+        
         
     }
 }
