@@ -82,6 +82,11 @@ public class Carrera {
     public void setContadorCapacidadActual(int ContadorCapacidadActual) {
         this.ContadorCapacidadActual = ContadorCapacidadActual;
     }
+
+    @Override
+    public String toString() {
+        return "Carrera{" + "codigo=" + codigo + ", nombre=" + nombre + ", puntajeAdimision=" + puntajeAdimision + '}';
+    }
     
     
 }
