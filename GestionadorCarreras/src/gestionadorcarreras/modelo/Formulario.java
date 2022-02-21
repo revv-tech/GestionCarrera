@@ -16,8 +16,7 @@ public class Formulario {
     private int puntajeObtenido;
     
 
-    public Formulario(TEstado estado, Carrera carreraSolicitada, int puntajeObtenido) {
-        this.estado = estado;
+    public Formulario(Carrera carreraSolicitada, int puntajeObtenido) {
         this.carreraSolicitada = carreraSolicitada;
         this.puntajeObtenido = puntajeObtenido;
     }
