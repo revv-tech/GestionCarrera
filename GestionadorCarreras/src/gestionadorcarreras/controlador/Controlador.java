@@ -22,9 +22,11 @@ public class Controlador {
     private DTOCarreras dtoCarerras;
     private static int countForm = 0;
 
-    public Controlador() {
+    public Controlador(DAO _dao) {
         this.gCarreras = new GestorCarreras();
+        gCarreras.setDao(_dao);
         this.gFormularios = new GestorFormularios();
+        gFormularios.setDao(_dao);
     }
     
     

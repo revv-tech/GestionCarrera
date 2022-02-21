@@ -64,4 +64,14 @@ public class GestorCarreras {
     public Collection<Carrera> getCarrerasDAO(){
         return dao.getCarreras();
     }
+
+    public DAO getDao() {
+        return dao;
+    }
+
+    public void setDao(DAO dao) {
+        this.dao = dao;
+    }
+    
+    
 }

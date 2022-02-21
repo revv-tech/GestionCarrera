@@ -60,5 +60,14 @@ public class GestorFormularios {
     public Collection getSolicitudesPorPuntaje(TEstado estado){
         return null;
     }
+
+    public DAO getDao() {
+        return dao;
+    }
+
+    public void setDao(DAO dao) {
+        this.dao = dao;
+    }
+    
     
 }
