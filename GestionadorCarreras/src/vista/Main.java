@@ -41,6 +41,6 @@ public class Main {
         controlador.procesarResultados();
 
         controlador.visualizarSolicitudes();
-        
+        System.out.println("ka");
     }
 }
