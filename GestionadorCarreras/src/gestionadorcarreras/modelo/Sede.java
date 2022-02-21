@@ -18,6 +18,10 @@ public class Sede {
         this.nombre = nombre;
     }
 
+    public Sede(String codigoSede, String nombreSede) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getCodigo() {
         return codigo;
     }

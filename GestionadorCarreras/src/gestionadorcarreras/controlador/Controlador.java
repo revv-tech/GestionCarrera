@@ -6,6 +6,7 @@ package gestionadorcarreras.controlador;
 
 import gestionadorcarreras.modelo.Carrera;
 import gestionadorcarreras.modelo.Formulario;
+import gestionadorcarreras.modelo.Sede;
 import gestionadorcarreras.modelo.TEstado;
 import java.util.Collection;
 import java.util.Random;
@@ -18,6 +19,7 @@ public class Controlador {
     
     private GestorCarreras gCarreras;
     private GestorFormularios gFormularios;
+    private DTOCarreras dtoCarerras;
     private static int countForm = 0;
     
     /**
@@ -26,7 +28,9 @@ public class Controlador {
      * @return 
      */
     public boolean crearCarrera(DTOCarreras dto){
-        return false;
+        Sede sede = new Sede(dto.codigoSede,dto.nombreSede);
+        Carrera carrera = new Carrera(dto.codigo,dto.nombre,dto.capacidadMax,dto.puntajeAdmision,dto.grado,sede);
+        return true;
     }
     /**
      * Metodo para visualizar la informacion de una carrera
@@ -89,7 +93,7 @@ public class Controlador {
             // Crea form
             Formulario newForm = new Formulario(carrera,b);
             gFormularios.agregarFormulario(newForm);
-            
+              
         }
         return true;
     }
