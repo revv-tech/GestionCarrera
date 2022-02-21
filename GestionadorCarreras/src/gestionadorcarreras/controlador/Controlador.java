@@ -68,7 +68,18 @@ public class Controlador {
      * Metodo para simular aplicacion de examen
      * @return 
      */
-    public boolean simularAplicacionExamen(){
+    public boolean simularAplicacionExamen(int maxForms){
+        
+        int minForms = 0;  
+        int randomNum = (int)(Math.random()*(maxForms-minForms+1)+minForms);
+        
+        int min = 0;
+        int max = 800;
+        
+        for (int i = 0 ; i <= maxForms ; i++){
+            int b = (int)(Math.random()*(max-min+1)+min);
+            
+        }
         return false;
     }
     /**
