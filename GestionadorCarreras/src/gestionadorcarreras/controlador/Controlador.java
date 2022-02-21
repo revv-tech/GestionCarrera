@@ -39,7 +39,9 @@ public class Controlador {
      */
     public boolean crearCarrera(DTOCarreras dto){
         Sede sede = new Sede(dto.codigoSede,dto.nombreSede);
-        Carrera carrera = new Carrera(dto.codigo,dto.nombre,dto.puntajeAdmision,dto.capacidadMax,dto.grado,sede);
+        ArrayList<Sede> lista = new ArrayList<Sede>();
+        lista.add(sede);
+        Carrera carrera = new Carrera(dto.codigo,dto.nombre,dto.puntajeAdmision,dto.capacidadMax,dto.grado,lista);
         gCarreras.agregarCarrera(carrera);
         return true;
     }
@@ -169,4 +171,40 @@ public class Controlador {
     public void ordenarXNota() {
         Collections.sort(DAO.formularios, Formulario.compGrade);
     }
+    
+    /**
+     * Metodo para ver un formulario específico
+     * @param numform es el identificador único de cada formulario
+     */
+    public Formulario verUnFormulario(int numform){
+        ArrayList<Formulario> formularios = gFormularios.getSolicitudes();
+
+        for (Formulario f : formularios){
+            if (f.getNum() == numform){
+                System.out.println(f.toString());
+                return f;
+            }
+        }
+        System.out.println("formulario no encontrado");
+        return null;
+    }
+    
+    public void totalSolicitudes(TEstado estado){
+        ArrayList<Formulario> formularios = gFormularios.getSolicitudes();
+        ArrayList<Carrera> carreras = gCarreras.getCarrerasDAO();
+        int total = 0;
+        for (Carrera c: carreras){
+            for(Formulario f : formularios){
+                Carrera carrera = f.getCarreraSolicitada();
+                if(carrera == c && f.getEstado() == estado){
+                    total++;
+                }
+            }
+            System.out.println("El total de formularios en estado "+ estado+
+                    " para la carrera de " + c.getNombre() + " es de " + total);
+        }
+        return;
+    }
+    
+    
 }

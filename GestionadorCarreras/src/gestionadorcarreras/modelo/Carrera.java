@@ -4,6 +4,8 @@
  */
 package gestionadorcarreras.modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Marco
@@ -16,9 +18,9 @@ public class Carrera {
     private int capacidadMaxima;
     private int ContadorCapacidadActual;
     private TGrado grado;
-    private Sede laSede;
+    private ArrayList<Sede> laSede;
 
-    public Carrera(String codigo, String nombre, int puntajeAdimision, int capacidadMaxima, TGrado grado, Sede laSede) {
+    public Carrera(String codigo, String nombre, int puntajeAdimision, int capacidadMaxima, TGrado grado, ArrayList<Sede> laSede) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.puntajeAdimision = puntajeAdimision;
@@ -67,11 +69,11 @@ public class Carrera {
         this.grado = grado;
     }
 
-    public Sede getLaSede() {
+    public ArrayList<Sede> getLaSede() {
         return laSede;
     }
 
-    public void setLaSede(Sede laSede) {
+    public void setLaSede(ArrayList<Sede> laSede) {
         this.laSede = laSede;
     }
 
