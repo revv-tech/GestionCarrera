@@ -8,6 +8,7 @@ import gestionadorcarreras.modelo.Carrera;
 import gestionadorcarreras.modelo.Formulario;
 import gestionadorcarreras.modelo.Sede;
 import gestionadorcarreras.modelo.TEstado;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Random;
 
@@ -46,7 +47,7 @@ public class Controlador {
      * Metodo para visualizar la informacion de una carrera
      * @return 
      */
-    public Collection visualizarCarreras(){
+    public ArrayList<Carrera> visualizarCarreras(){
         return null;
     }
     /**
@@ -114,7 +115,7 @@ public class Controlador {
     public boolean procesarResultados(){
         
         
-        Collection<Formulario> forms = gFormularios.getSolicitudes();
+        ArrayList<Formulario> forms = gFormularios.getSolicitudes();
         
             for (Formulario f : forms){
             if (f.getPuntajeObtenido() < f.getCarreraSolicitada().getPuntajeAdimision()){
@@ -135,7 +136,7 @@ public class Controlador {
      * Metodo para visualizar las solicitudes
      * @return 
      */
-    public Collection visualizarSolicitudes(){
+    public ArrayList<Carrera> visualizarSolicitudes(){
         return null;
     }
     /**
@@ -144,7 +145,7 @@ public class Controlador {
      * @param porNombre
      * @return 
      */
-    public Collection verFormularios(TEstado estado, boolean porNombre){
+    public ArrayList<Carrera> verFormularios(TEstado estado, boolean porNombre){
         return null;
     }
     
