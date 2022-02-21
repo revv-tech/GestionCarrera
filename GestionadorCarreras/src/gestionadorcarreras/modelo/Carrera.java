@@ -14,6 +14,7 @@ public class Carrera {
     private String nombre;
     private int puntajeAdimision;
     private int capacidadMaxima;
+    private int ContadorCapacidadActual;
     private TGrado grado;
     private Sede laSede;
 
@@ -72,6 +73,14 @@ public class Carrera {
 
     public void setLaSede(Sede laSede) {
         this.laSede = laSede;
+    }
+
+    public int getContadorCapacidadActual() {
+        return ContadorCapacidadActual;
+    }
+
+    public void setContadorCapacidadActual(int ContadorCapacidadActual) {
+        this.ContadorCapacidadActual = ContadorCapacidadActual;
     }
     
     
