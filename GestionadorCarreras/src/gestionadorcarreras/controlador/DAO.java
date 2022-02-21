@@ -17,7 +17,12 @@ public class DAO {
     Collection<Carrera> carreras;
     Collection<Formulario> formularios;
 
+    public DAO() {
+        
 
+    }
+    
+    
     public Collection<Carrera> getCarreras() {
         return carreras;
     }
