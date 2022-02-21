@@ -22,8 +22,6 @@ public class Main {
     
     public static void main(String args[]) {
        
-        // crear sede
-        
         
         DAO dao = new DAO();
         Controlador controlador = new Controlador(dao); 
@@ -40,7 +38,7 @@ public class Main {
         controlador.crearCarrera(dtobiotec);
         
         controlador.simularAplicacionExamen(12);
-        controlador.procesarResultados();
+
         
         
     }
