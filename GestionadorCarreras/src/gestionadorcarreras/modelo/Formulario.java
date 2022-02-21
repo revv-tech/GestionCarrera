@@ -75,5 +75,10 @@ public class Formulario {
     public void setPuntajeObtenido(int puntajeObtenido) {
         this.puntajeObtenido = puntajeObtenido;
     }
+
+    @Override
+    public String toString() {
+        return "Formulario{" + "num=" + num + ", estado=" + estado + ", carreraSolicitada=" + carreraSolicitada + ", puntajeObtenido=" + puntajeObtenido + '}';
+    }
     
 }

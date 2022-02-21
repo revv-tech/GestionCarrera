@@ -39,7 +39,7 @@ public class Controlador {
      */
     public boolean crearCarrera(DTOCarreras dto){
         Sede sede = new Sede(dto.codigoSede,dto.nombreSede);
-        Carrera carrera = new Carrera(dto.codigo,dto.nombre,dto.capacidadMax,dto.puntajeAdmision,dto.grado,sede);
+        Carrera carrera = new Carrera(dto.codigo,dto.nombre,dto.puntajeAdmision,dto.capacidadMax,dto.grado,sede);
         gCarreras.agregarCarrera(carrera);
         return true;
     }
@@ -93,8 +93,11 @@ public class Controlador {
         int min = 0;
         int max = 800;
         
+        
+        
         for (int i = 0 ; i <= maxForms ; i++){
-            
+            //Crea codigo de formulario
+            countForm = countForm+1;
             // Obtiene carrera random
             Random rnd = new Random();
             int iCarrera = rnd.nextInt(gCarreras.getCarrerasDAO().size());
@@ -103,8 +106,10 @@ public class Controlador {
             int b = (int)(Math.random()*(max-min+1)+min);
             // Crea form
             Formulario newForm = new Formulario(carrera,b);
+            newForm.setNum(countForm);
             gFormularios.agregarFormulario(newForm);
-              
+            System.out.println(newForm.toString());
+               
         }
         return true;
     }
@@ -118,15 +123,17 @@ public class Controlador {
         ArrayList<Formulario> forms = gFormularios.getSolicitudes();
         
             for (Formulario f : forms){
-            if (f.getPuntajeObtenido() < f.getCarreraSolicitada().getPuntajeAdimision()){
-            
-                f.setEstado(TEstado.RECHAZADO);
-            }
-            
-            else if (f.getPuntajeObtenido() >= f.getCarreraSolicitada().getPuntajeAdimision()){
-            
-                f.setEstado(TEstado.ACEPTADO);
-            }
+                
+                if (f.getPuntajeObtenido() < f.getCarreraSolicitada().getPuntajeAdimision()){
+
+                    f.setEstado(TEstado.RECHAZADO);
+                }
+
+                else if (f.getPuntajeObtenido() >= f.getCarreraSolicitada().getPuntajeAdimision()){
+
+                    f.setEstado(TEstado.ACEPTADO);
+                }
+                System.out.println(f.toString());
               
         }
             
