@@ -25,5 +25,6 @@ public class Main {
         Sede sedeSJ = new Sede(1, "San Jose");
         Carrera compu = new Carrera("CI", "Computacion", 650, 40, TGrado.BACHILLERATO, sedeSJ);
         Carrera biotec = new Carrera("BIO", "Biotecnologia", 750, 40, TGrado.BACHILLERATO, sedeC);
+        
     }
 }
