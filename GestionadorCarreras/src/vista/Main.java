@@ -10,6 +10,9 @@ import gestionadorcarreras.modelo.TGrado;
 import gestionadorcarreras.modelo.Formulario;
 import gestionadorcarreras.modelo.Sede;
 import gestionadorcarreras.controlador.DTOCarreras;
+import gestionadorcarreras.controlador.DAO;
+import java.util.Collection;
+import java.util.Collections;
 /**
  *
  * @author Marco
@@ -20,7 +23,12 @@ public class Main {
     public static void main(String args[]) {
        
         // crear sede
-        Controlador controlador = new Controlador();
+;
+        
+        /*
+        DAO dao = new DAO();
+        Controlador controlador = new Controlador(dao); 
+        
         // crear grado
         Sede sedeC = new Sede(1, "Cartago");
         Sede sedeSJ = new Sede(2, "San Jose");
@@ -31,6 +39,10 @@ public class Main {
         
         controlador.crearCarrera(dtocompu);
         controlador.crearCarrera(dtobiotec);
+        
+        controlador.simularAplicacionExamen(12);
+*/
+        
         
     }
 }
