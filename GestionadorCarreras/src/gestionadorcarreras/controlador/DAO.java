@@ -16,5 +16,21 @@ public class DAO {
     
     Collection<Carrera> carreras;
     Collection<Formulario> formularios;
+
+    public Collection<Carrera> getCarreras() {
+        return carreras;
+    }
+
+    public void setCarreras(Collection<Carrera> carreras) {
+        this.carreras = carreras;
+    }
+
+    public Collection<Formulario> getFormularios() {
+        return formularios;
+    }
+
+    public void setFormularios(Collection<Formulario> formularios) {
+        this.formularios = formularios;
+    }
     
 }

@@ -10,14 +10,14 @@ package gestionadorcarreras.modelo;
  */
 public class Carrera {
 
-    private int codigo;
+    private String codigo;
     private String nombre;
     private int puntajeAdimision;
     private int capacidadMaxima;
     private TGrado grado;
     private Sede laSede;
 
-    public Carrera(int codigo, String nombre, int puntajeAdimision, int capacidadMaxima, TGrado grado, Sede laSede) {
+    public Carrera(String codigo, String nombre, int puntajeAdimision, int capacidadMaxima, TGrado grado, Sede laSede) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.puntajeAdimision = puntajeAdimision;
@@ -26,11 +26,11 @@ public class Carrera {
         this.laSede = laSede;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
