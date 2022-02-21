@@ -6,6 +6,7 @@ package gestionadorcarreras.controlador;
 
 import gestionadorcarreras.modelo.Carrera;
 import gestionadorcarreras.modelo.Formulario;
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -14,28 +15,27 @@ import java.util.Collection;
  */
 public class DAO {
     
-    Collection<Carrera> carreras;
-    Collection<Formulario> formularios;
+    ArrayList<Carrera> carreras;
+    ArrayList<Formulario> formularios;
 
     public DAO() {
         
 
     }
     
-    
-    public Collection<Carrera> getCarreras() {
+    public ArrayList<Carrera> getCarreras() {
         return carreras;
     }
 
-    public void setCarreras(Collection<Carrera> carreras) {
+    public void setCarreras(ArrayList<Carrera> carreras) {
         this.carreras = carreras;
     }
 
-    public Collection<Formulario> getFormularios() {
+    public ArrayList<Formulario> getFormularios() {
         return formularios;
     }
 
-    public void setFormularios(Collection<Formulario> formularios) {
+    public void setFormularios(ArrayList<Formulario> formularios) {
         this.formularios = formularios;
     }
     

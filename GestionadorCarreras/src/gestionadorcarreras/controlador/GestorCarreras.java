@@ -6,6 +6,7 @@ package gestionadorcarreras.controlador;
 
 import gestionadorcarreras.modelo.Carrera;
 import gestionadorcarreras.modelo.Sede;
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -30,7 +31,7 @@ public class GestorCarreras {
      * 
      * @return 
      */
-    public Collection buscarCarreras(){
+    public ArrayList<Carrera> buscarCarreras(){
         return null;
     }
     /**
@@ -61,7 +62,7 @@ public class GestorCarreras {
      * Metodo que devuelve las carreras del DAO
      * @return 
      */
-    public Collection<Carrera> getCarrerasDAO(){
+    public ArrayList<Carrera> getCarrerasDAO(){
         return dao.getCarreras();
     }
 
