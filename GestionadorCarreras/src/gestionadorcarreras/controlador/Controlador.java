@@ -8,6 +8,7 @@ import gestionadorcarreras.modelo.Carrera;
 import gestionadorcarreras.modelo.Formulario;
 import gestionadorcarreras.modelo.TEstado;
 import java.util.Collection;
+import java.util.Random;
 
 /**
  * 
@@ -70,9 +71,14 @@ public class Controlador {
      */
     public boolean simularAplicacionExamen(int maxForms){
         
+        // Cantidad de forms
         int minForms = 0;  
         int randomNum = (int)(Math.random()*(maxForms-minForms+1)+minForms);
-        
+        // Obtiene carrera random
+        Random rnd = new Random();
+        int iCarrera = rnd.nextInt(gCarreras.getCarrerasDAO().size());
+        Carrera carrera = (Carrera) gCarreras.getCarrerasDAO().toArray()[iCarrera];
+        // Maximo y minimo de nota
         int min = 0;
         int max = 800;
         
