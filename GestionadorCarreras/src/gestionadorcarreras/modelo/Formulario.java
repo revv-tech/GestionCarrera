@@ -17,7 +17,7 @@ public class Formulario {
     private int puntajeObtenido;
     private String nombreSolicitante;
     
-
+    
     public Formulario(Carrera carreraSolicitada, int puntajeObtenido, String nombre) {
         this.carreraSolicitada = carreraSolicitada;
         this.puntajeObtenido = puntajeObtenido;

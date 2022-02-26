@@ -6,8 +6,10 @@ package controller;
 
 import controller.DAO.DAOCarrerasImpl;
 import controller.DAO.DAOFormularioImp;
+import java.util.ArrayList;
 import java.util.List;
 import model.Formulario;
+import model.TEstado;
 
 /**
  *
@@ -50,10 +52,25 @@ public class GestorFormulario {
             // Nota aleatoria
             int b = (int)(Math.random()*(max-min+1)+min);
             formActual.setPuntajeObtenido(b);
-            System.out.println(formActual.toString());
+            //System.out.println(formActual.toString());
             
         }
         return true;
     }
     
+    
+    public boolean definirResultados(){
+    
+        List<Formulario> solicitudes = this.buscarFormularios();
+        
+        for (Formulario f : solicitudes){
+        
+            if (f.getPuntajeObtenido() < f.getCarreraSolicitada().getPuntajeAdmision()){
+            
+                f.setEstado(TEstado.RECHAZADO);
+            }
+        }
+        
+        return true;
+    } 
 }
