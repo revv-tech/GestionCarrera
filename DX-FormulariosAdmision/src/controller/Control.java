@@ -132,10 +132,15 @@ public class Control {
         return gFormularios.aplicarSimulacion();
     }
     
-    public void mostrarFormularios(){
+    public void mostrarSolictudes(){
         // el gestor obtiene lo solicitado y lo deja en el dto.
         dtoFormulario.setFormularios(gFormularios.buscarFormularios());
         
+    }
+    
+    public void definirEstadoSolicitudes(){
+    
+        gFormularios.definirResultados();
     }
     
 }
