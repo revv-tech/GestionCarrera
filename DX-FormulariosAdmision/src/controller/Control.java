@@ -139,8 +139,8 @@ public class Control {
         
     }
 
-    public void verUnFormulario(int numform){
-        Formulario form = gFormularios.obtenerUnFormulario(numform);
+    public void verUnFormulario(DTOFormulario dto){
+        Formulario form = gFormularios.obtenerUnFormulario(dto.getNum());
         dtoFormulario.setIdentificacion(form.getIdentificacion());
         dtoFormulario.setNombreCompleto(form.getNombreCompleto());
         dtoFormulario.setFechaNacimiento(form.getFechaNacimiento());
@@ -161,6 +161,6 @@ public class Control {
     }
     
     public void totalSolicitudesEstado(DTOFormulario dto){
-        dtoFormulario.setNum(gFormularios.totalSolicitudesEstado(dto.getCarreraSolicitada(), dto.getSede(), dto.getEstado()));
+        dtoFormulario.setTotalEstado(gFormularios.totalSolicitudesEstado(dto.getCarreraSolicitada(), dto.getSede(), dto.getEstado()));
     }
 }
