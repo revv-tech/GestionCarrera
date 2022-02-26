@@ -105,9 +105,9 @@ public class Control {
      * @return 
      */
     public boolean crearFormulario(DTOFormulario dto){
-        
+        //Crea obj Formulaio
         Formulario nuevoFormulario = new Formulario();
-        nuevoFormulario.setCarreraSolicitada(dto.getCarreraSolicitada());
+        //Iguala atributos
         nuevoFormulario.setCorreo(dto.getCorreo());
         nuevoFormulario.setEdad(dto.getEdad());
         nuevoFormulario.setEstado(dto.getEstado());
@@ -119,6 +119,7 @@ public class Control {
         nuevoFormulario.setSede(dto.getSede());
         nuevoFormulario.setTelefono(dto.getTelefono());
         nuevoFormulario.setDireccionResidencia(dto.getDireccionResidencia());
+        nuevoFormulario.setCarreraSolicitada(dto.getCarreraSolicitada());
         
         return gFormularios.agregarFormulario(nuevoFormulario);
     }

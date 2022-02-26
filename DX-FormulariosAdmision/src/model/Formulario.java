@@ -31,21 +31,7 @@ public class Formulario {
 
     public Formulario() {}
     
-    public Formulario(String identificacion, String nombreCompleto, Date fechaNacimiento, int edad, String correo, String telefono, String direccionResidencia, String instSecundaria, TEstado estado, Carrera carreraSolicitada, String sede, int puntajeObtenido) {
-        this.identificacion = identificacion;
-        this.nombreCompleto = nombreCompleto;
-        this.fechaNacimiento = fechaNacimiento;
-        this.edad = edad;
-        this.correo = correo;
-        this.telefono = telefono;
-        this.direccionResidencia = direccionResidencia;
-        this.instSecundaria = instSecundaria;
-        this.estado = estado;
-        this.carreraSolicitada = carreraSolicitada;
-        this.sede = sede;
-        this.puntajeObtenido = puntajeObtenido;
-    }
-
+    
     public String getIdentificacion() {
         return identificacion;
     }

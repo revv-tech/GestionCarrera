@@ -26,9 +26,9 @@ public class DTOFormulario {
     private String direccionResidencia;
     private String instSecundaria;
     private TEstado estado;
-    private Carrera carreraSolcitada;
+    private Carrera carreraSolicitada;
     private String sede;
-    private int puntajeObtenido;
+    private int puntajeObtenido = 0;
     private List<Formulario> formularios;
  
     
@@ -108,11 +108,11 @@ public class DTOFormulario {
     }
 
     public Carrera getCarreraSolicitada() {
-        return carreraSolcitada;
+        return carreraSolicitada;
     }
 
-        public void setCarreraSolicitada(Carrera carreraSolicitada) {
-        this.carreraSolcitada = carreraSolcitada;
+    public void setCarreraSolicitada(Carrera carreraSolicitada) {
+        this.carreraSolicitada = carreraSolicitada;
     }
 
     public String getSede() {
@@ -131,13 +131,6 @@ public class DTOFormulario {
         this.puntajeObtenido = puntajeObtenido;
     }
 
-    public Carrera getCarreraSolcitada() {
-        return carreraSolcitada;
-    }
-
-    public void setCarreraSolcitada(Carrera carreraSolcitada) {
-        this.carreraSolcitada = carreraSolcitada;
-    }
 
     public List<Formulario> getFormularios() {
         return formularios;
