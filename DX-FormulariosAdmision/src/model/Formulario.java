@@ -26,7 +26,7 @@ public class Formulario {
     private String instSecundaria;
     private TEstado estado;
     private Carrera carreraSolicitada;
-    private String sede;
+    private Sede sede;
     private int puntajeObtenido;
 
     public Formulario() {}
@@ -112,11 +112,11 @@ public class Formulario {
         this.carreraSolicitada = carreraSolicitada;
     }
 
-    public String getSede() {
+    public Sede getSede() {
         return sede;
     }
 
-    public void setSede(String sede) {
+    public void setSede(Sede sede) {
         this.sede = sede;
     }
 

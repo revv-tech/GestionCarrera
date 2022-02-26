@@ -6,6 +6,7 @@
 package controller;
 
 import controller.DAO.DAOSedesImpl;
+import java.util.ArrayList;
 import model.Carrera;
 import model.Formulario;
 import model.Sede;
@@ -137,10 +138,29 @@ public class Control {
         dtoFormulario.setFormularios(gFormularios.buscarFormularios());
         
     }
+
+    public void verUnFormulario(int numform){
+        Formulario form = gFormularios.obtenerUnFormulario(numform);
+        dtoFormulario.setIdentificacion(form.getIdentificacion());
+        dtoFormulario.setNombreCompleto(form.getNombreCompleto());
+        dtoFormulario.setFechaNacimiento(form.getFechaNacimiento());
+        dtoFormulario.setEdad(form.getEdad());
+        dtoFormulario.setCorreo(form.getCorreo());
+        dtoFormulario.setTelefono(form.getTelefono());
+        dtoFormulario.setDireccionResidencia(form.getDireccionResidencia());
+        dtoFormulario.setInstSecundaria(form.getInstSecundaria());
+        dtoFormulario.setEstado(form.getEstado());
+        dtoFormulario.setCarreraSolicitada(form.getCarreraSolicitada());
+        dtoFormulario.setSede(form.getSede());
+        dtoFormulario.setPuntajeObtenido(form.getPuntajeObtenido());
+    }
     
     public void definirEstadoSolicitudes(){
     
         gFormularios.definirResultados();
     }
     
+    public void totalSolicitudesEstado(DTOFormulario dto){
+        dtoFormulario.setNum(gFormularios.totalSolicitudesEstado(dto.getCarreraSolicitada(), dto.getSede(), dto.getEstado()));
+    }
 }
