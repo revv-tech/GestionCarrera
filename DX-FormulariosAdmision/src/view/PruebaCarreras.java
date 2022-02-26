@@ -4,7 +4,12 @@ import controller.Control;
 import controller.DAO.DAOCarrerasImpl;
 import controller.DAO.DAOSedesImpl;
 import controller.DTOCarrera;
+import controller.DTOFormulario;
+import java.util.Date;
+import model.Carrera;
+import model.Formulario;
 import model.Sede;
+import model.TEstado;
 import model.TGrado;
 
 /*
@@ -20,6 +25,7 @@ import model.TGrado;
 public class PruebaCarreras {
  
     static DTOCarrera elDTO;
+    static DTOFormulario dtoFormulario;
     
     public static void mostrarCarreras(){
         
@@ -29,6 +35,7 @@ public class PruebaCarreras {
     public static void main(String[] args) {
         // se activa el DTO que provee el control
         elDTO = Control.getInstance().getDto();
+        dtoFormulario = Control.getInstance().getDTOFormulario();
         //se muestran las carreras previamente cargadas
         Control.getInstance().mostrarCarreras();
         System.out.println("Todas las carreras\n" + elDTO.getLasCarreras());
@@ -66,5 +73,36 @@ public class PruebaCarreras {
         
         Control.getInstance().mostrarCarreras("CA");
         System.out.println("Luego de modificar " + elDTO.getLasCarreras());
+        
+        // Agrega formularios
+        // Se activa el DTO que provee el control de formularios
+        // Agregando nuevo formulario
+        
+        Sede sede = new Sede("LI","Limon");
+        
+        // Carrera de prueba
+        Carrera carrera = new Carrera("CI", "Compu",650, 90, TGrado.BACHILLERATO, sede);
+        
+        dtoFormulario.setCarreraSolicitada(carrera);
+        dtoFormulario.setCorreo("revvace@gmail.com");
+        dtoFormulario.setEdad(20);
+        dtoFormulario.setEstado(TEstado.ACEPTADO);
+        Date date = new Date();
+        dtoFormulario.setFechaNacimiento(date);
+        dtoFormulario.setIdentificacion("117680133");
+        dtoFormulario.setInstSecundaria("New Hope Highschool");
+        dtoFormulario.setNombreCompleto("Marco Antonio Reveiz Rojas");
+        dtoFormulario.setPuntajeObtenido(0);
+        dtoFormulario.setSede("SJ");
+        dtoFormulario.setTelefono("85769188");
+        dtoFormulario.setDireccionResidencia("Heredia, San Rafel");
+        Control.getInstance().crearFormulario(dtoFormulario);
+        
+        
+        Control.getInstance().mostrarFormularios();
+        Control.getInstance().simularExamen();
+        System.out.println(dtoFormulario.getFormularios());
+        
+        
     }
 }
