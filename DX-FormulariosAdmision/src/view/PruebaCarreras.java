@@ -38,14 +38,14 @@ public class PruebaCarreras {
         dtoFormulario = Control.getInstance().getDTOFormulario();
         //se muestran las carreras previamente cargadas
         Control.getInstance().mostrarCarreras();
-        System.out.println("Todas las carreras\n" + elDTO.getLasCarreras());
+        //System.out.println("Todas las carreras\n" + elDTO.getLasCarreras());
         
         //mostrar las carreras específicas de una sede particular: CARTAGO
         Control.getInstance().mostrarCarreras("CA");
-        System.out.println("Las carreras de CA\n" + elDTO.getLasCarreras());
+        //System.out.println("Las carreras de CA\n" + elDTO.getLasCarreras());
         
         //incorporando una nueva carrera al sistema
-        System.out.println("Ingresando una nueva carrera");
+        //System.out.println("Ingresando una nueva carrera");
         elDTO.setCodigo("AU");
         elDTO.setNombre("Arquitectura y Urbanismo");
         elDTO.setGrado("LICENCIATURA");
@@ -56,13 +56,13 @@ public class PruebaCarreras {
         
         //mostrar las carreras específicas de una sede particular: SAN JOSE
         Control.getInstance().mostrarCarreras("SJ");
-        System.out.println("Las carreras de SJ\n" + elDTO.getLasCarreras());
+        //System.out.println("Las carreras de SJ\n" + elDTO.getLasCarreras());
         
         Control.getInstance().consultarCarrera("SJ", "AU");
-        System.out.println("La carrera consultada es "+ 
+        /*System.out.println("La carrera consultada es "+ 
                                     elDTO.getCodigo()+ "-"+
                                     elDTO.getNombre());
-        
+        */
         elDTO.setCodigoSede("CA");
         elDTO.setCodigo("IC");
         elDTO.setMaximoAdmitidos(200);
@@ -72,7 +72,7 @@ public class PruebaCarreras {
         
         
         Control.getInstance().mostrarCarreras("CA");
-        System.out.println("Luego de modificar " + elDTO.getLasCarreras());
+        //System.out.println("Luego de modificar " + elDTO.getLasCarreras());
         
         // Agrega formularios
         // Se activa el DTO que provee el control de formularios
@@ -80,26 +80,31 @@ public class PruebaCarreras {
         
         Sede sede = new Sede("LI","Limon");
         
-        // Carrera de prueba
-        Carrera carrera = new Carrera("CI", "Compu",650, 90, TGrado.BACHILLERATO, sede);
-        
-        dtoFormulario.setCarreraSolicitada(carrera);
-        dtoFormulario.setCorreo("revvace@gmail.com");
-        dtoFormulario.setEdad(20);
-        dtoFormulario.setEstado(TEstado.ACEPTADO);
-        Date date = new Date();
-        dtoFormulario.setFechaNacimiento(date);
-        dtoFormulario.setIdentificacion("117680133");
-        dtoFormulario.setInstSecundaria("New Hope Highschool");
-        dtoFormulario.setNombreCompleto("Marco Antonio Reveiz Rojas");
-        dtoFormulario.setPuntajeObtenido(0);
-        dtoFormulario.setSede("SJ");
-        dtoFormulario.setTelefono("85769188");
-        dtoFormulario.setDireccionResidencia("Heredia, San Rafel");
-        Control.getInstance().crearFormulario(dtoFormulario);
-        
-        
-        Control.getInstance().mostrarFormularios();
+        // Ejemplo de agregar formularios
+        for (int i = 5 ; i != 0 ; i--){
+            // Carrera de prueba
+            // Maximo y minimo de index de carreras
+            int min = 0;
+            int max = elDTO.getLasCarreras().size()-1;
+            int carreraAleatoria = (int)(Math.random()*(max-min+1)+min);
+            Carrera carrera = elDTO.getLasCarreras().get(carreraAleatoria);
+            // Empieza a crear el DTO (la nota siempre empezara en cero y el gestor poner el num del formulario)
+            dtoFormulario.setCarreraSolicitada(carrera);
+            dtoFormulario.setCorreo("revvace@gmail.com");
+            dtoFormulario.setEdad(20);
+            dtoFormulario.setEstado(TEstado.ACEPTADO);
+            Date date = new Date();
+            dtoFormulario.setFechaNacimiento(date);
+            dtoFormulario.setIdentificacion("117680133");
+            dtoFormulario.setInstSecundaria("New Hope Highschool");
+            dtoFormulario.setNombreCompleto("Marco Antonio Reveiz Rojas");
+            dtoFormulario.setSede("SJ");
+            dtoFormulario.setTelefono("85769188");
+            dtoFormulario.setDireccionResidencia("Heredia, San Rafel");
+            Control.getInstance().crearFormulario(dtoFormulario);
+        }
+        //Control.getInstance().mostrarFormularios();
+        //Simula examen de nota
         Control.getInstance().simularExamen();
         System.out.println(dtoFormulario.getFormularios());
         

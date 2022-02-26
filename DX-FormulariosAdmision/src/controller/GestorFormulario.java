@@ -50,6 +50,7 @@ public class GestorFormulario {
             // Nota aleatoria
             int b = (int)(Math.random()*(max-min+1)+min);
             formActual.setPuntajeObtenido(b);
+            System.out.println(formActual.toString());
             
         }
         return true;
