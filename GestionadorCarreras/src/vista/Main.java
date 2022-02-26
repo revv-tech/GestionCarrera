@@ -11,6 +11,7 @@ import gestionadorcarreras.modelo.Formulario;
 import gestionadorcarreras.modelo.Sede;
 import gestionadorcarreras.controlador.DTOCarreras;
 import gestionadorcarreras.controlador.DAO;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 /**
@@ -29,10 +30,14 @@ public class Main {
         // crear grado
         Sede sedeC = new Sede(1, "Cartago");
         Sede sedeSJ = new Sede(2, "San Jose");
-        Carrera compu = new Carrera("CI", "Computacion", 650, 40, TGrado.BACHILLERATO, sedeSJ);
-        Carrera biotec = new Carrera("IB", "Biotecnologia", 750, 40, TGrado.BACHILLERATO, sedeC);
+        ArrayList<Sede> sedes = new ArrayList<Sede>();
+        sedes.add(sedeC);
+        sedes.add(sedeSJ);
+        Carrera compu = new Carrera("CI", "Computacion", 650, 40, TGrado.BACHILLERATO, sedes);
+        Carrera biotec = new Carrera("IB", "Biotecnologia", 750, 40, TGrado.BACHILLERATO, sedes);
         DTOCarreras dtocompu = new DTOCarreras("CI", "Computacion", 650, 40, TGrado.BACHILLERATO, 2, "San Jose");
         DTOCarreras dtobiotec = new DTOCarreras("IB", "Biotecnologia", 750, 40, TGrado.BACHILLERATO, 1, "Cartago");
+        Formulario form1 = new Formulario(compu, 103, "Juan1");
         
         controlador.crearCarrera(dtocompu);
         controlador.crearCarrera(dtobiotec);
@@ -41,6 +46,10 @@ public class Main {
         controlador.procesarResultados();
 
         controlador.visualizarSolicitudes();
-        System.out.println("ka");
+        controlador.verUnFormulario(1);
+        controlador.totalSolicitudes(TEstado.ACEPTADO);
+        controlador.totalSolicitudes(TEstado.RECHAZADO);
+        controlador.totalSolicitudes(TEstado.EN_ESPERA);
+
     }
 }
