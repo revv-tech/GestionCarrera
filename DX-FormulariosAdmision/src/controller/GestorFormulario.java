@@ -72,10 +72,17 @@ public class GestorFormulario {
             
                 f.setEstado(TEstado.RECHAZADO);
             }
-        }
-        
+
+            else if (f.getPuntajeObtenido() >= f.getCarreraSolicitada().getPuntajeAdmision()
+                    && f.getCarreraSolicitada().getCapacidadMax() <= this.totalSolicitudesEstado(f.getCarreraSolicitada(), f.getSede(), TEstado.ACEPTADO)){
+            
+                //System.out.println("Cpacidad: " + f.getCarreraSolicitada().getCapacidadMax()+ " <= Aceptados: " + this.totalSolicitudesEstado(f.getCarreraSolicitada(), f.getSede(), TEstado.ACEPTADO));
+                f.setEstado(TEstado.EN_ESPERA);
+            }
+        } 
         return true;
-    } 
+    }
+
     /**
     *Devuelve el formulario con el numero recibido
     *numForm: Numero del formulario
