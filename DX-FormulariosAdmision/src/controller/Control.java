@@ -7,6 +7,7 @@ package controller;
 
 import controller.DAO.DAOSedesImpl;
 import model.Carrera;
+import model.Formulario;
 import model.Sede;
 import model.TGrado;
 
@@ -23,8 +24,15 @@ public class Control {
     //Atributo DTO Utilitario para la transferencia de datos asociados a la entidad Carrera
     private DTOCarrera dto;
     
+    //Agregado Marco
+    //Atributo DTO Utilitario para la transferencia de datos asociados a la entidad Formulario
+     private DTOFormulario dtoFormulario;
+     
     //atributos de acceso controlado 
     private GestorCarreras gCarreras;
+    
+    //attributos de acceso controlado
+    private GestorFormulario gFormularios;
 
     public static Control getInstance(){
         if (singletonControl == null){
@@ -34,11 +42,18 @@ public class Control {
     }
     private Control() {
         dto = new DTOCarrera();
+        //Agregado Marco
+        dtoFormulario = new DTOFormulario();
+        gFormularios = new GestorFormulario();
         gCarreras = new GestorCarreras();  // se habilita un gestor con carreras precreadas    
     }
 
     public DTOCarrera getDto() {
         return dto;
+    }
+    
+    public DTOFormulario getDTOFormulario(){
+        return dtoFormulario;
     }
     
     public boolean crearCarrera(DTOCarrera dto){      
@@ -84,4 +99,42 @@ public class Control {
         }
         return false;
     }
+    /**
+     * Crea formulario
+     * @param dto DTOFormulario
+     * @return 
+     */
+    public boolean crearFormulario(DTOFormulario dto){
+        
+        Formulario nuevoFormulario = new Formulario();
+        nuevoFormulario.setCarreraSolicitada(dto.getCarreraSolicitada());
+        nuevoFormulario.setCorreo(dto.getCorreo());
+        nuevoFormulario.setEdad(dto.getEdad());
+        nuevoFormulario.setEstado(dto.getEstado());
+        nuevoFormulario.setFechaNacimiento(dto.getFechaNacimiento());
+        nuevoFormulario.setIdentificacion(dto.getIdentificacion());
+        nuevoFormulario.setInstSecundaria(dto.getInstSecundaria());
+        nuevoFormulario.setNombreCompleto(dto.getNombreCompleto());
+        nuevoFormulario.setPuntajeObtenido(dto.getPuntajeObtenido());
+        nuevoFormulario.setSede(dto.getSede());
+        nuevoFormulario.setTelefono(dto.getTelefono());
+        nuevoFormulario.setDireccionResidencia(dto.getDireccionResidencia());
+        
+        return gFormularios.agregarFormulario(nuevoFormulario);
+    }
+    
+    /**
+     * Simula aplicacion de prueba con las lista de formularios registrados
+     */
+    
+    public boolean simularExamen() {
+        return gFormularios.aplicarSimulacion();
+    }
+    
+    public void mostrarFormularios(){
+        // el gestor obtiene lo solicitado y lo deja en el dto.
+        dtoFormulario.setFormularios(gFormularios.buscarFormularios());
+        
+    }
+    
 }
