@@ -49,7 +49,7 @@ public class PruebaCarreras {
         elDTO.setCodigo("AU");
         elDTO.setNombre("Arquitectura y Urbanismo");
         elDTO.setGrado("LICENCIATURA");
-        elDTO.setMaximoAdmitidos(40);
+        elDTO.setMaximoAdmitidos(20);
         elDTO.setPuntajeMaximo(600);
         elDTO.setCodigoSede("SJ");        
         Control.getInstance().crearCarrera(elDTO);
@@ -65,7 +65,7 @@ public class PruebaCarreras {
         */
         elDTO.setCodigoSede("CA");
         elDTO.setCodigo("IC");
-        elDTO.setMaximoAdmitidos(200);
+        elDTO.setMaximoAdmitidos(20);
         elDTO.setPuntajeMaximo(680);
         Control.getInstance().editarCarrera(elDTO);
         Control.getInstance().editarCarrera(elDTO);
@@ -81,7 +81,7 @@ public class PruebaCarreras {
         Sede sede = new Sede("LI","Limon");
         
         // Ejemplo de agregar formularios
-        for (int i = 5 ; i != 0 ; i--){
+        for (int i = 10 ; i != 0 ; i--){
             // Carrera de prueba
             // Maximo y minimo de index de carreras
             int min = 0;
