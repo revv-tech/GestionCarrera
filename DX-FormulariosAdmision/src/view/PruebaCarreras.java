@@ -98,7 +98,7 @@ public class PruebaCarreras {
             dtoFormulario.setIdentificacion("117680133");
             dtoFormulario.setInstSecundaria("New Hope Highschool");
             dtoFormulario.setNombreCompleto("Marco Antonio Reveiz Rojas");
-            dtoFormulario.setSede("CA");
+            dtoFormulario.setSede(sede);
             dtoFormulario.setTelefono("85769188");
             dtoFormulario.setDireccionResidencia("Heredia, San Rafel");
             Control.getInstance().crearFormulario(dtoFormulario);
