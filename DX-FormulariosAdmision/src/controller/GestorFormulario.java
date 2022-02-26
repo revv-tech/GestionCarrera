@@ -8,7 +8,9 @@ import controller.DAO.DAOCarrerasImpl;
 import controller.DAO.DAOFormularioImp;
 import java.util.ArrayList;
 import java.util.List;
+import model.Carrera;
 import model.Formulario;
+import model.Sede;
 import model.TEstado;
 
 /**
@@ -32,6 +34,7 @@ public class GestorFormulario {
         
         return DAOFormularioImp.getInstance().create(formulario);
     }
+    
     /**
      * Busca la lista de formularios
      * @return lista de formularios
@@ -73,4 +76,53 @@ public class GestorFormulario {
         
         return true;
     } 
+    /**
+    *Devuelve el formulario con el numero recibido
+    *numForm: Numero del formulario
+    */
+    public Formulario obtenerUnFormulario(int numForm){
+//        ArrayList<Formulario> formularios = this.getSolicitudes();
+          ArrayList<Formulario> formularios;
+        for (Formulario f : formularios){
+            if (f.getNum() == numForm){
+                System.out.println(f.toString());
+                return f;
+            }
+        }
+        System.out.println("formulario no encontrado");
+        return null;
+    }
+    
+    public int totalSolicitudesEstado(Carrera carrera, Sede sede, TEstado estado){
+        int total = 0;
+        if(sede == null && carrera == null){
+            for (Formulario f : formularios){
+                if (f.getEstado() == estado){
+                    total++;
+                }
+            }
+        }
+        else if(sede == null){
+            for (Formulario f : formularios){
+                if (f.getCarreraSolicitada() == carrera && f.getEstado() == estado){
+                    total++;
+                }
+            }
+        }
+        else if(carrera == null){
+            for (Formulario f : formularios){
+                if (f.getSede() == sede && f.getEstado() == estado){
+                    total++;
+                }
+            }
+        }
+        else{
+            for (Formulario f : formularios){
+                if (f.getSede() == sede && f.getCarreraSolicitada() == carrera && f.getEstado() == estado){
+                    total++;
+                }
+            }
+        }
+        return total;
+    }
 }
