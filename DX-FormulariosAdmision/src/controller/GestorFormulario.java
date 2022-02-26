@@ -81,11 +81,9 @@ public class GestorFormulario {
     *numForm: Numero del formulario
     */
     public Formulario obtenerUnFormulario(int numForm){
-//        ArrayList<Formulario> formularios = this.getSolicitudes();
-          ArrayList<Formulario> formularios;
+        ArrayList<Formulario> formularios = (ArrayList) this.buscarFormularios();
         for (Formulario f : formularios){
             if (f.getNum() == numForm){
-                System.out.println(f.toString());
                 return f;
             }
         }
@@ -95,6 +93,7 @@ public class GestorFormulario {
     
     public int totalSolicitudesEstado(Carrera carrera, Sede sede, TEstado estado){
         int total = 0;
+        ArrayList<Formulario> formularios = (ArrayList) this.buscarFormularios();
         if(sede == null && carrera == null){
             for (Formulario f : formularios){
                 if (f.getEstado() == estado){
