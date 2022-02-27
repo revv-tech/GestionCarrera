@@ -5,6 +5,7 @@
 package model;
 
 import controller.DTOCarrera;
+import java.util.Comparator;
 import java.util.Date;
 
 /**
@@ -31,6 +32,19 @@ public class Formulario {
 
     public Formulario() {}
     
+        public static Comparator<Formulario> compGrade = new Comparator<Formulario>() {
+      public int compare(Formulario f1, Formulario f2) {
+          return f2.puntajeObtenido - f1.puntajeObtenido;
+      }  
+    };
+    
+    public static Comparator<Formulario> compName = new Comparator<Formulario>() {
+      public int compare(Formulario f1, Formulario f2) {
+          String StudentName1 = f1.nombreCompleto.toUpperCase();
+	  String StudentName2 = f2.nombreCompleto.toUpperCase();
+	  return StudentName1.compareTo(StudentName2);
+      }  
+    };
     
     public String getIdentificacion() {
         return identificacion;

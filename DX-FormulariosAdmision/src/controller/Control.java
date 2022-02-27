@@ -7,6 +7,7 @@ package controller;
 
 import controller.DAO.DAOSedesImpl;
 import java.util.ArrayList;
+import java.util.Collections;
 import model.Carrera;
 import model.Formulario;
 import model.Sede;
@@ -68,6 +69,14 @@ public class Control {
                             elGrado, laSede);
         // se solicita al gestor el registro de la carrera
         return gCarreras.agregarCarrera(unaCarrera);
+    }
+    
+    public void ordenarXNombre(){
+        Collections.sort(dtoFormulario.getFormularios(), Formulario.compName);
+    }
+    
+    public void ordenarXPuntaje(){
+        Collections.sort(dtoFormulario.getFormularios(), Formulario.compGrade);
     }
     
     public void mostrarCarreras(){

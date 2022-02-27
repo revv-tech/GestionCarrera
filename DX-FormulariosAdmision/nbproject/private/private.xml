@@ -3,17 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/WIN7/Documents/GitHub/GestionCarrera/DX-FormulariosAdmision/src/model/Formulario.java</file>
-            <file>file:/C:/Users/WIN7/Documents/GitHub/GestionCarrera/DX-FormulariosAdmision/src/view/PruebaCarreras.java</file>
-            <file>file:/C:/Users/WIN7/Documents/GitHub/GestionCarrera/DX-FormulariosAdmision/src/controller/GestorCarreras.java</file>
-            <file>file:/C:/Users/WIN7/Documents/GitHub/GestionCarrera/DX-FormulariosAdmision/src/model/Carrera.java</file>
-            <file>file:/C:/Users/WIN7/Documents/GitHub/GestionCarrera/DX-FormulariosAdmision/src/controller/Control.java</file>
-            <file>file:/C:/Users/WIN7/Documents/GitHub/GestionCarrera/DX-FormulariosAdmision/src/controller/GestorFormulario.java</file>
-            <file>file:/C:/Users/WIN7/Documents/GitHub/GestionCarrera/DX-FormulariosAdmision/src/controller/DTOFormulario.java</file>
-            <file>file:/C:/Users/WIN7/Documents/GitHub/GestionCarrera/DX-FormulariosAdmision/src/controller/DAO/DAOSedesImpl.java</file>
-            <file>file:/C:/Users/WIN7/Documents/GitHub/GestionCarrera/DX-FormulariosAdmision/src/controller/DAO/DAOFormularioImp.java</file>
-            <file>file:/C:/Users/WIN7/Documents/GitHub/GestionCarrera/DX-FormulariosAdmision/src/controller/DTOCarrera.java</file>
-            <file>file:/C:/Users/WIN7/Documents/GitHub/GestionCarrera/DX-FormulariosAdmision/src/controller/DAO/DAOTrasaccional.java</file>
+            <file>file:/H:/Programming/Java/Code/GestionCarrera/DX-FormulariosAdmision/src/controller/DTOFormulario.java</file>
+            <file>file:/H:/Programming/Java/Code/GestionCarrera/DX-FormulariosAdmision/src/controller/GestorFormulario.java</file>
+            <file>file:/H:/Programming/Java/Code/GestionCarrera/DX-FormulariosAdmision/src/controller/Control.java</file>
+            <file>file:/H:/Programming/Java/Code/GestionCarrera/DX-FormulariosAdmision/src/model/Formulario.java</file>
         </group>
     </open-files>
 </project-private>
