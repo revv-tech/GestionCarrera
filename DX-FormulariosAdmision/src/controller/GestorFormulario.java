@@ -82,6 +82,20 @@ public class GestorFormulario {
         } 
         return true;
     }
+    
+    /**
+     * @param formularios : lista de formularios que debe revisar
+     * @param estado : estado que desea buscar
+     * @return : ArrayList con los formularios que tengan 'estado'
+     */
+    public static List<Formulario> formulariosXEstado(List<Formulario> formularios, TEstado estado){
+        List<Formulario> formEstado = new ArrayList<Formulario>();
+        for (Formulario formulario : formularios) {
+            if (formulario.getEstado() == estado)
+                formEstado.add(formulario);
+        }
+        return formEstado;
+    }
 
     /**
     *Devuelve el formulario con el numero recibido
