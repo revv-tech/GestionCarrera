@@ -73,18 +73,18 @@ public class Control {
         return gCarreras.agregarCarrera(unaCarrera);
     }
     
-    public List<Formulario> ordenarXNombre(TEstado estado){
+    public void ordenarXNombre(TEstado estado){
        List<Formulario> formularios = dtoFormulario.getFormularios();
        formularios = GestorFormulario.formulariosXEstado(formularios, estado);
        Collections.sort(formularios, Formulario.compName);
-       return formularios;
+       dtoFormulario.setFormularios(formularios);
     }
     
-    public List<Formulario> ordenarXPuntaje(TEstado estado){
+    public void ordenarXPuntaje(TEstado estado){
        List<Formulario> formularios = dtoFormulario.getFormularios();
        formularios = GestorFormulario.formulariosXEstado(formularios, estado);
        Collections.sort(formularios, Formulario.compGrade);
-       return formularios;
+       dtoFormulario.setFormularios(formularios);
     }
     
     public void mostrarCarreras(){

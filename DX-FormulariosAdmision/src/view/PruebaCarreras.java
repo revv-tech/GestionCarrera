@@ -208,19 +208,21 @@ public class PruebaCarreras {
         showFormularios((ArrayList)dtoFormulario.getFormularios());
         
         System.out.println("Mostrando las solicitudes RECHAZADAS por nombre del solicitante");
-        Control.getInstance().ordenarXNombre();
+        Control.getInstance().ordenarXNombre(TEstado.ACEPTADO);
         showFormularios((ArrayList)dtoFormulario.getFormularios());
 
         System.out.println("Mostrando las solicitudes RECHAZADAS por nota obtenida del solicitante");
-        Control.getInstance().ordenarXPuntaje();
+        Control.getInstance().ordenarXPuntaje(TEstado.ACEPTADO);
         showFormularios((ArrayList)dtoFormulario.getFormularios());
         
-                System.out.println("Mostrando las solicitudes RECHAZADAS por nombre del solicitante");
-        Control.getInstance().ordenarXNombre();
+        System.out.println("Mostrando las solicitudes RECHAZADAS por nombre del solicitante");
+        System.out.println("###############################################################");
+        Control.getInstance().ordenarXNombre(TEstado.ACEPTADO);
         showFormularios((ArrayList)dtoFormulario.getFormularios());
 
         System.out.println("Mostrando las solicitudes RECHAZADAS por nota obtenida del solicitante");
-        Control.getInstance().ordenarXPuntaje();
+        System.out.println("###############################################################");
+        Control.getInstance().ordenarXPuntaje(TEstado.ACEPTADO);
         showFormularios((ArrayList)dtoFormulario.getFormularios());
         
         System.out.println("Mostrando el total de solicitudes aceptadas...");
