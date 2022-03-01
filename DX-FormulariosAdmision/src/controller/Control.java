@@ -8,10 +8,12 @@ package controller;
 import controller.DAO.DAOSedesImpl;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import model.Carrera;
 import model.Formulario;
 import model.Sede;
 import model.TGrado;
+import model.TEstado;                   
 
 /**
  *
@@ -71,12 +73,18 @@ public class Control {
         return gCarreras.agregarCarrera(unaCarrera);
     }
     
-    public void ordenarXNombre(){
-        Collections.sort(dtoFormulario.getFormularios(), Formulario.compName);
+    public List<Formulario> ordenarXNombre(TEstado estado){
+       List<Formulario> formularios = dtoFormulario.getFormularios();
+       GestorFormulario.formulariosXEstado(formularios, estado);
+       Collections.sort(formularios, Formulario.compName);
+       return formularios;
     }
     
-    public void ordenarXPuntaje(){
-        Collections.sort(dtoFormulario.getFormularios(), Formulario.compGrade);
+    public List<Formulario> ordenarXPuntaje(TEstado estado){
+       List<Formulario> formularios = dtoFormulario.getFormularios();
+       GestorFormulario.formulariosXEstado(formularios, estado);
+       Collections.sort(formularios, Formulario.compGrade);
+       return formularios;
     }
     
     public void mostrarCarreras(){
