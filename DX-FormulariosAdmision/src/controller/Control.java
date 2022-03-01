@@ -75,14 +75,14 @@ public class Control {
     
     public List<Formulario> ordenarXNombre(TEstado estado){
        List<Formulario> formularios = dtoFormulario.getFormularios();
-       GestorFormulario.formulariosXEstado(formularios, estado);
+       formularios = GestorFormulario.formulariosXEstado(formularios, estado);
        Collections.sort(formularios, Formulario.compName);
        return formularios;
     }
     
     public List<Formulario> ordenarXPuntaje(TEstado estado){
        List<Formulario> formularios = dtoFormulario.getFormularios();
-       GestorFormulario.formulariosXEstado(formularios, estado);
+       formularios = GestorFormulario.formulariosXEstado(formularios, estado);
        Collections.sort(formularios, Formulario.compGrade);
        return formularios;
     }
