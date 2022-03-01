@@ -101,7 +101,7 @@ public class Control {
     }
     
     public boolean editarCarrera(DTOCarrera elDTO){
-        Carrera laCarrera = gCarreras.buscarCarrera(elDTO.getCodigoSede(), elDTO.getCodigoSede());
+        Carrera laCarrera = gCarreras.buscarCarrera(elDTO.getCodigoSede(), elDTO.getCodigo());
         if (laCarrera != null){
             laCarrera.setPuntajeAdmision(elDTO.getPuntajeMaximo());
             laCarrera.setCapacidadMax(elDTO.getMaximoAdmitidos());
